@@ -69,7 +69,7 @@ public class DriverSoftmax {
 				rows.get(i).getOutput() ? 0.9 : 0.1
 			};
 		}
-		nn.train(inputs,outputs,0.04);
+		nn.train(inputs,outputs,0.00001);
 	}
 }
 
