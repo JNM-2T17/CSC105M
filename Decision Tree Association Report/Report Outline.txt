@@ -1,0 +1,54 @@
+Report
+I. Intro
+	A. Predictive Analytics - Decision Trees
+	B. Descriptive Analytics - Association Rule Mining
+II. Body
+	A. Decision Trees
+		1. Approximating discrete valued targets
+		2. If then tree
+		3. Nodes = attributes
+		4. Leaf = values
+		5. Appropriate Problems
+			a. Attributes have discrete values
+			b. Target is discrete
+			c. Training data may have errors
+			d. Training data may have missing values
+		6. ID3
+			a. Entropy
+			b. Gain
+			c. Algorithm
+		7. Characteristics
+			a. Hill-climbing search
+			b. Prefers shorter trees
+			c. Occam's Razor
+		8. Issues
+			a. Overfitting data
+			b. Continuous Data
+			c. Gain Ratio
+			d. Missing values
+			e. Attribute Cost
+		9. C4.5 Algorithm
+			a. Using Gain Ratio for postpruning
+			b.  Partitioning Continuous Data
+			c. Weights for Missing Valued records
+	B. Association Rule Mining
+		1. Support
+		2. Confidence
+		3. Algorithm
+			a. Finding subsets above minsup
+			b. Finding rules within subsets above minconf
+				i. Find all nonempty subsets s of k
+				ii. Find confidence of all s -> k - s
+			c. a priori algorithm
+		4. Consider Lift
+		5. Postprocessing
+			a. Filter out trivial rules
+			b. Sensitivity Analysis
+III. Conclusion
+	A. Decision trees for common discrete classification
+	B. Association Rule Mining for finding common patterns in data
+
+Baesens, B. (2014). Analytics in a Big Data World: The Essential Guide to Data Science and its Applications. NJ: John Wiley & Sons.
+C4.5 Algorithm. (n.d.). Retrieved July 6, 2016, In Wikipedia: https://en.wikipedia.org/wiki/C4.5_algorithm
+Hssina, B., Merbouha, A. et al. (n.d.) A comparative study of decision tree ID3 and C4.5. Sultan Moulay Slimane University.
+Mitchell, T. (1997). Machine Learning. McGraw Hill.

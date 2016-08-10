@@ -1,0 +1,88 @@
+higher <= 0
+|   freetime <= 2
+|   |   famsize <= 0: Pass (3.0)
+|   |   famsize > 0: Fail (4.0)
+|   freetime > 2: Fail (48.0)
+higher > 0
+|   failures <= 0
+|   |   school <= 0
+|   |   |   nursery <= 0
+|   |   |   |   goout <= 4
+|   |   |   |   |   Walc <= 4
+|   |   |   |   |   |   Mhome <= 0
+|   |   |   |   |   |   |   Walc <= 3
+|   |   |   |   |   |   |   |   absences <= 5: Pass (21.0/2.0)
+|   |   |   |   |   |   |   |   absences > 5
+|   |   |   |   |   |   |   |   |   Mhealth <= 0: Fail (7.0)
+|   |   |   |   |   |   |   |   |   Mhealth > 0: Pass (2.0)
+|   |   |   |   |   |   |   Walc > 3: Fail (8.0)
+|   |   |   |   |   |   Mhome > 0: Fail (8.0/1.0)
+|   |   |   |   |   Walc > 4: Pass (3.0)
+|   |   |   |   goout > 4: Pass (4.0)
+|   |   |   nursery > 0
+|   |   |   |   internet <= 0
+|   |   |   |   |   goout <= 2
+|   |   |   |   |   |   traveltime <= 3: Pass (16.0)
+|   |   |   |   |   |   traveltime > 3: Fail (2.0)
+|   |   |   |   |   goout > 2
+|   |   |   |   |   |   famsize <= 0
+|   |   |   |   |   |   |   Fservices <= 0
+|   |   |   |   |   |   |   |   famsup <= 0: Fail (2.0)
+|   |   |   |   |   |   |   |   famsup > 0: Pass (5.0/1.0)
+|   |   |   |   |   |   |   Fservices > 0: Fail (4.0)
+|   |   |   |   |   |   famsize > 0: Fail (4.0)
+|   |   |   |   internet > 0
+|   |   |   |   |   schoolsup <= 0
+|   |   |   |   |   |   Dalc <= 1: Pass (147.0/11.0)
+|   |   |   |   |   |   Dalc > 1
+|   |   |   |   |   |   |   Fedu <= 3
+|   |   |   |   |   |   |   |   famrel <= 4
+|   |   |   |   |   |   |   |   |   Fedu <= 1: Pass (5.0/1.0)
+|   |   |   |   |   |   |   |   |   Fedu > 1: Fail (13.0/1.0)
+|   |   |   |   |   |   |   |   famrel > 4: Pass (5.0)
+|   |   |   |   |   |   |   Fedu > 3: Pass (16.0/1.0)
+|   |   |   |   |   schoolsup > 0
+|   |   |   |   |   |   age <= 15
+|   |   |   |   |   |   |   Mhome <= 0: Fail (8.0/1.0)
+|   |   |   |   |   |   |   Mhome > 0: Pass (2.0)
+|   |   |   |   |   |   age > 15: Pass (6.0)
+|   |   school > 0
+|   |   |   health <= 1
+|   |   |   |   Dalc <= 1: Pass (17.0/1.0)
+|   |   |   |   Dalc > 1: Fail (2.0)
+|   |   |   health > 1
+|   |   |   |   Mhome <= 0
+|   |   |   |   |   famrel <= 1: Fail (5.0)
+|   |   |   |   |   famrel > 1
+|   |   |   |   |   |   Mhealth <= 0
+|   |   |   |   |   |   |   activities <= 0
+|   |   |   |   |   |   |   |   goout <= 2: Pass (8.0/1.0)
+|   |   |   |   |   |   |   |   goout > 2
+|   |   |   |   |   |   |   |   |   sex <= 0: Fail (9.0)
+|   |   |   |   |   |   |   |   |   sex > 0
+|   |   |   |   |   |   |   |   |   |   age <= 15: Pass (3.0)
+|   |   |   |   |   |   |   |   |   |   age > 15
+|   |   |   |   |   |   |   |   |   |   |   internet <= 0: Fail (7.0)
+|   |   |   |   |   |   |   |   |   |   |   internet > 0
+|   |   |   |   |   |   |   |   |   |   |   |   Pstatus <= 0: Pass (11.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Pstatus > 0: Fail (3.0)
+|   |   |   |   |   |   |   activities > 0
+|   |   |   |   |   |   |   |   Fedu <= 1
+|   |   |   |   |   |   |   |   |   sex <= 0: Fail (3.0)
+|   |   |   |   |   |   |   |   |   sex > 0: Pass (3.0/1.0)
+|   |   |   |   |   |   |   |   Fedu > 1: Pass (12.0/1.0)
+|   |   |   |   |   |   Mhealth > 0: Fail (7.0/1.0)
+|   |   |   |   Mhome > 0
+|   |   |   |   |   famsup <= 0
+|   |   |   |   |   |   goout <= 3: Pass (2.0)
+|   |   |   |   |   |   goout > 3: Fail (3.0)
+|   |   |   |   |   famsup > 0: Fail (23.0/1.0)
+|   failures > 0
+|   |   Fhome <= 0
+|   |   |   absences <= 2
+|   |   |   |   Fedu <= 3
+|   |   |   |   |   Dalc <= 1: Fail (11.0)
+|   |   |   |   |   Dalc > 1: Pass (3.0/1.0)
+|   |   |   |   Fedu > 3: Pass (2.0)
+|   |   |   absences > 2: Fail (36.0)
+|   |   Fhome > 0: Pass (6.0/1.0)

@@ -1,0 +1,86 @@
+failures <= 0
+|   higher <= 0
+|   |   Fhome <= 0: Fail (26.0/2.0)
+|   |   Fhome > 0
+|   |   |   age <= 17: Fail (2.0)
+|   |   |   age > 17: Pass (3.0)
+|   higher > 0
+|   |   Mhome <= 0
+|   |   |   Walc <= 3
+|   |   |   |   schoolsup <= 0
+|   |   |   |   |   school <= 0
+|   |   |   |   |   |   internet <= 0
+|   |   |   |   |   |   |   Fservices <= 0: Pass (14.0)
+|   |   |   |   |   |   |   Fservices > 0: Fail (7.0/1.0)
+|   |   |   |   |   |   internet > 0
+|   |   |   |   |   |   |   age <= 18: Pass (144.0/12.0)
+|   |   |   |   |   |   |   age > 18
+|   |   |   |   |   |   |   |   guardM <= 0: Pass (3.0)
+|   |   |   |   |   |   |   |   guardM > 0: Fail (3.0)
+|   |   |   |   |   school > 0
+|   |   |   |   |   |   Walc <= 2
+|   |   |   |   |   |   |   closehome <= 0
+|   |   |   |   |   |   |   |   absences <= 3
+|   |   |   |   |   |   |   |   |   romantic <= 0: Pass (28.0/2.0)
+|   |   |   |   |   |   |   |   |   romantic > 0
+|   |   |   |   |   |   |   |   |   |   repu <= 0: Fail (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   repu > 0: Pass (3.0)
+|   |   |   |   |   |   |   |   absences > 3
+|   |   |   |   |   |   |   |   |   Pstatus <= 0: Fail (10.0/1.0)
+|   |   |   |   |   |   |   |   |   Pstatus > 0: Pass (2.0)
+|   |   |   |   |   |   |   closehome > 0: Pass (8.0)
+|   |   |   |   |   |   Walc > 2
+|   |   |   |   |   |   |   Fedu <= 2: Fail (9.0)
+|   |   |   |   |   |   |   Fedu > 2: Pass (3.0)
+|   |   |   |   schoolsup > 0
+|   |   |   |   |   traveltime <= 1
+|   |   |   |   |   |   famsup <= 0: Fail (5.0/1.0)
+|   |   |   |   |   |   famsup > 0
+|   |   |   |   |   |   |   freetime <= 1: Fail (2.0)
+|   |   |   |   |   |   |   freetime > 1: Pass (19.0/2.0)
+|   |   |   |   |   traveltime > 1: Fail (5.0)
+|   |   |   Walc > 3
+|   |   |   |   internet <= 0: Fail (6.0)
+|   |   |   |   internet > 0
+|   |   |   |   |   Walc <= 4
+|   |   |   |   |   |   studytime <= 2
+|   |   |   |   |   |   |   paid <= 0
+|   |   |   |   |   |   |   |   Fedu <= 3
+|   |   |   |   |   |   |   |   |   Fservices <= 0
+|   |   |   |   |   |   |   |   |   |   address <= 0
+|   |   |   |   |   |   |   |   |   |   |   freetime <= 3: Pass (5.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   freetime > 3: Fail (12.0/1.0)
+|   |   |   |   |   |   |   |   |   |   address > 0: Pass (2.0)
+|   |   |   |   |   |   |   |   |   Fservices > 0: Fail (7.0)
+|   |   |   |   |   |   |   |   Fedu > 3
+|   |   |   |   |   |   |   |   |   romantic <= 0: Pass (8.0)
+|   |   |   |   |   |   |   |   |   romantic > 0: Fail (2.0)
+|   |   |   |   |   |   |   paid > 0: Fail (2.0)
+|   |   |   |   |   |   studytime > 2: Pass (3.0)
+|   |   |   |   |   Walc > 4: Pass (12.0/2.0)
+|   |   Mhome > 0
+|   |   |   closehome <= 0
+|   |   |   |   schoolsup <= 0
+|   |   |   |   |   studytime <= 2
+|   |   |   |   |   |   Walc <= 1
+|   |   |   |   |   |   |   school <= 0: Pass (4.0)
+|   |   |   |   |   |   |   school > 0
+|   |   |   |   |   |   |   |   romantic <= 0: Fail (3.0)
+|   |   |   |   |   |   |   |   romantic > 0: Pass (3.0)
+|   |   |   |   |   |   Walc > 1
+|   |   |   |   |   |   |   absences <= 15: Fail (29.0/3.0)
+|   |   |   |   |   |   |   absences > 15: Pass (2.0)
+|   |   |   |   |   studytime > 2: Pass (3.0)
+|   |   |   |   schoolsup > 0: Fail (9.0/1.0)
+|   |   |   closehome > 0
+|   |   |   |   school <= 0: Pass (10.0)
+|   |   |   |   school > 0: Fail (3.0)
+failures > 0
+|   Walc <= 1
+|   |   paid <= 0
+|   |   |   Fhealth <= 0
+|   |   |   |   Fhome <= 0: Fail (28.0/1.0)
+|   |   |   |   Fhome > 0: Pass (3.0/1.0)
+|   |   |   Fhealth > 0: Pass (2.0)
+|   |   paid > 0: Pass (3.0)
+|   Walc > 1: Fail (56.0)

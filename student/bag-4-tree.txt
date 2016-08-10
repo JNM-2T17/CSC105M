@@ -1,0 +1,84 @@
+failures <= 0
+|   higher <= 0
+|   |   Fservices <= 0: Fail (16.0/1.0)
+|   |   Fservices > 0
+|   |   |   absences <= 3: Fail (3.0)
+|   |   |   absences > 3: Pass (3.0)
+|   higher > 0
+|   |   Mhome <= 0
+|   |   |   Dalc <= 2
+|   |   |   |   Fteach <= 0
+|   |   |   |   |   absences <= 3
+|   |   |   |   |   |   health <= 4: Pass (125.0/11.0)
+|   |   |   |   |   |   health > 4
+|   |   |   |   |   |   |   famrel <= 3: Pass (8.0)
+|   |   |   |   |   |   |   famrel > 3
+|   |   |   |   |   |   |   |   Pstatus <= 0
+|   |   |   |   |   |   |   |   |   traveltime <= 1
+|   |   |   |   |   |   |   |   |   |   closehome <= 0: Pass (40.0/6.0)
+|   |   |   |   |   |   |   |   |   |   closehome > 0
+|   |   |   |   |   |   |   |   |   |   |   famrel <= 4: Pass (3.0)
+|   |   |   |   |   |   |   |   |   |   |   famrel > 4: Fail (4.0)
+|   |   |   |   |   |   |   |   |   traveltime > 1
+|   |   |   |   |   |   |   |   |   |   Fhealth <= 0
+|   |   |   |   |   |   |   |   |   |   |   guardF <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   Medu <= 3: Fail (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Medu > 3: Pass (2.0)
+|   |   |   |   |   |   |   |   |   |   |   guardF > 0: Fail (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   Fhealth > 0: Pass (2.0)
+|   |   |   |   |   |   |   |   Pstatus > 0: Fail (6.0/1.0)
+|   |   |   |   |   absences > 3
+|   |   |   |   |   |   studytime <= 1
+|   |   |   |   |   |   |   Walc <= 1
+|   |   |   |   |   |   |   |   freetime <= 4: Pass (8.0/1.0)
+|   |   |   |   |   |   |   |   freetime > 4: Fail (3.0)
+|   |   |   |   |   |   |   Walc > 1: Fail (18.0/2.0)
+|   |   |   |   |   |   studytime > 1
+|   |   |   |   |   |   |   Mhealth <= 0
+|   |   |   |   |   |   |   |   nursery <= 0
+|   |   |   |   |   |   |   |   |   traveltime <= 1: Pass (5.0/1.0)
+|   |   |   |   |   |   |   |   |   traveltime > 1: Fail (6.0)
+|   |   |   |   |   |   |   |   nursery > 0
+|   |   |   |   |   |   |   |   |   freetime <= 1: Fail (3.0)
+|   |   |   |   |   |   |   |   |   freetime > 1
+|   |   |   |   |   |   |   |   |   |   schoolsup <= 0
+|   |   |   |   |   |   |   |   |   |   |   Dalc <= 1: Pass (36.0/3.0)
+|   |   |   |   |   |   |   |   |   |   |   Dalc > 1
+|   |   |   |   |   |   |   |   |   |   |   |   freetime <= 2: Fail (3.0)
+|   |   |   |   |   |   |   |   |   |   |   |   freetime > 2: Pass (9.0/1.0)
+|   |   |   |   |   |   |   |   |   |   schoolsup > 0
+|   |   |   |   |   |   |   |   |   |   |   Medu <= 2: Pass (3.0)
+|   |   |   |   |   |   |   |   |   |   |   Medu > 2: Fail (4.0)
+|   |   |   |   |   |   |   Mhealth > 0: Fail (5.0/1.0)
+|   |   |   |   Fteach > 0: Pass (23.0/1.0)
+|   |   |   Dalc > 2
+|   |   |   |   famsup <= 0: Pass (7.0/1.0)
+|   |   |   |   famsup > 0
+|   |   |   |   |   Mteach <= 0: Fail (14.0/1.0)
+|   |   |   |   |   Mteach > 0
+|   |   |   |   |   |   Pstatus <= 0: Pass (2.0)
+|   |   |   |   |   |   Pstatus > 0: Fail (2.0)
+|   |   Mhome > 0
+|   |   |   studytime <= 2
+|   |   |   |   famrel <= 2: Pass (3.0)
+|   |   |   |   famrel > 2
+|   |   |   |   |   absences <= 6
+|   |   |   |   |   |   sex <= 0: Fail (12.0)
+|   |   |   |   |   |   sex > 0
+|   |   |   |   |   |   |   Walc <= 3
+|   |   |   |   |   |   |   |   freetime <= 1: Pass (2.0)
+|   |   |   |   |   |   |   |   freetime > 1
+|   |   |   |   |   |   |   |   |   age <= 15: Pass (3.0/1.0)
+|   |   |   |   |   |   |   |   |   age > 15: Fail (22.0/2.0)
+|   |   |   |   |   |   |   Walc > 3: Pass (2.0)
+|   |   |   |   |   absences > 6: Pass (3.0)
+|   |   |   studytime > 2: Pass (14.0/1.0)
+failures > 0
+|   Medu <= 2: Fail (56.0/1.0)
+|   Medu > 2
+|   |   Fteach <= 0
+|   |   |   repu <= 0
+|   |   |   |   Fedu <= 1: Pass (2.0)
+|   |   |   |   Fedu > 1: Fail (25.0/1.0)
+|   |   |   repu > 0: Pass (2.0)
+|   |   Fteach > 0: Pass (2.0)

@@ -1,0 +1,106 @@
+failures <= 0
+|   higher <= 0
+|   |   repu <= 0: Fail (27.0/1.0)
+|   |   repu > 0
+|   |   |   traveltime <= 1: Pass (2.0)
+|   |   |   traveltime > 1: Fail (3.0)
+|   higher > 0
+|   |   school <= 0
+|   |   |   schoolsup <= 0
+|   |   |   |   internet <= 0
+|   |   |   |   |   repu <= 0
+|   |   |   |   |   |   age <= 15: Fail (6.0)
+|   |   |   |   |   |   age > 15
+|   |   |   |   |   |   |   Mservices <= 0
+|   |   |   |   |   |   |   |   absences <= 3: Pass (6.0)
+|   |   |   |   |   |   |   |   absences > 3
+|   |   |   |   |   |   |   |   |   age <= 16: Fail (2.0)
+|   |   |   |   |   |   |   |   |   age > 16: Pass (6.0/1.0)
+|   |   |   |   |   |   |   Mservices > 0: Fail (2.0)
+|   |   |   |   |   repu > 0: Pass (4.0)
+|   |   |   |   internet > 0
+|   |   |   |   |   nursery <= 0
+|   |   |   |   |   |   Fteach <= 0
+|   |   |   |   |   |   |   guardM <= 0
+|   |   |   |   |   |   |   |   address <= 0
+|   |   |   |   |   |   |   |   |   famsup <= 0: Pass (5.0/1.0)
+|   |   |   |   |   |   |   |   |   famsup > 0: Fail (7.0)
+|   |   |   |   |   |   |   |   address > 0: Pass (5.0)
+|   |   |   |   |   |   |   guardM > 0: Pass (16.0/1.0)
+|   |   |   |   |   |   Fteach > 0: Fail (3.0)
+|   |   |   |   |   nursery > 0
+|   |   |   |   |   |   Fedu <= 3
+|   |   |   |   |   |   |   Dalc <= 1
+|   |   |   |   |   |   |   |   Fedu <= 1
+|   |   |   |   |   |   |   |   |   freetime <= 3
+|   |   |   |   |   |   |   |   |   |   activities <= 0
+|   |   |   |   |   |   |   |   |   |   |   Mservices <= 0: Fail (4.0)
+|   |   |   |   |   |   |   |   |   |   |   Mservices > 0: Pass (2.0)
+|   |   |   |   |   |   |   |   |   |   activities > 0: Pass (10.0)
+|   |   |   |   |   |   |   |   |   freetime > 3: Fail (5.0)
+|   |   |   |   |   |   |   |   Fedu > 1: Pass (84.0/8.0)
+|   |   |   |   |   |   |   Dalc > 1
+|   |   |   |   |   |   |   |   age <= 17
+|   |   |   |   |   |   |   |   |   Medu <= 3
+|   |   |   |   |   |   |   |   |   |   health <= 4
+|   |   |   |   |   |   |   |   |   |   |   Medu <= 2
+|   |   |   |   |   |   |   |   |   |   |   |   sex <= 0: Fail (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   sex > 0: Pass (3.0)
+|   |   |   |   |   |   |   |   |   |   |   Medu > 2: Pass (6.0)
+|   |   |   |   |   |   |   |   |   |   health > 4: Fail (4.0)
+|   |   |   |   |   |   |   |   |   Medu > 3: Fail (7.0)
+|   |   |   |   |   |   |   |   age > 17
+|   |   |   |   |   |   |   |   |   sex <= 0: Pass (11.0)
+|   |   |   |   |   |   |   |   |   sex > 0
+|   |   |   |   |   |   |   |   |   |   Medu <= 2: Fail (2.0)
+|   |   |   |   |   |   |   |   |   |   Medu > 2: Pass (2.0)
+|   |   |   |   |   |   Fedu > 3: Pass (59.0/2.0)
+|   |   |   schoolsup > 0
+|   |   |   |   Walc <= 2
+|   |   |   |   |   Fhome <= 0
+|   |   |   |   |   |   age <= 16: Fail (15.0)
+|   |   |   |   |   |   age > 16
+|   |   |   |   |   |   |   nursery <= 0: Fail (3.0)
+|   |   |   |   |   |   |   nursery > 0: Pass (3.0)
+|   |   |   |   |   Fhome > 0: Pass (2.0)
+|   |   |   |   Walc > 2: Pass (8.0)
+|   |   school > 0
+|   |   |   health <= 1
+|   |   |   |   Dalc <= 1: Pass (14.0)
+|   |   |   |   Dalc > 1
+|   |   |   |   |   Mhome <= 0: Pass (2.0)
+|   |   |   |   |   Mhome > 0: Fail (2.0)
+|   |   |   health > 1
+|   |   |   |   goout <= 2
+|   |   |   |   |   romantic <= 0
+|   |   |   |   |   |   guardF <= 0: Fail (4.0)
+|   |   |   |   |   |   guardF > 0: Pass (4.0/1.0)
+|   |   |   |   |   romantic > 0: Pass (12.0/1.0)
+|   |   |   |   goout > 2
+|   |   |   |   |   Mteach <= 0
+|   |   |   |   |   |   schoolsup <= 0
+|   |   |   |   |   |   |   nursery <= 0: Fail (16.0)
+|   |   |   |   |   |   |   nursery > 0
+|   |   |   |   |   |   |   |   Mhome <= 0
+|   |   |   |   |   |   |   |   |   activities <= 0
+|   |   |   |   |   |   |   |   |   |   age <= 16: Fail (10.0)
+|   |   |   |   |   |   |   |   |   |   age > 16
+|   |   |   |   |   |   |   |   |   |   |   Pstatus <= 0: Pass (3.0)
+|   |   |   |   |   |   |   |   |   |   |   Pstatus > 0: Fail (2.0)
+|   |   |   |   |   |   |   |   |   activities > 0: Pass (12.0/1.0)
+|   |   |   |   |   |   |   |   Mhome > 0: Fail (19.0/2.0)
+|   |   |   |   |   |   schoolsup > 0
+|   |   |   |   |   |   |   famsup <= 0: Fail (3.0)
+|   |   |   |   |   |   |   famsup > 0: Pass (2.0)
+|   |   |   |   |   Mteach > 0
+|   |   |   |   |   |   sex <= 0: Pass (2.0)
+|   |   |   |   |   |   sex > 0: Fail (2.0)
+failures > 0
+|   Medu <= 3
+|   |   Fedu <= 0
+|   |   |   school <= 0: Fail (2.0)
+|   |   |   school > 0: Pass (2.0)
+|   |   Fedu > 0: Fail (70.0)
+|   Medu > 3
+|   |   repu <= 0: Fail (7.0/1.0)
+|   |   repu > 0: Pass (3.0)

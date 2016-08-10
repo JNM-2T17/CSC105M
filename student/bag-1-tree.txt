@@ -1,0 +1,106 @@
+failures <= 0
+|   higher <= 0: Fail (26.0/2.0)
+|   higher > 0
+|   |   Mhome <= 0
+|   |   |   internet <= 0
+|   |   |   |   Walc <= 3
+|   |   |   |   |   freetime <= 4
+|   |   |   |   |   |   absences <= 8
+|   |   |   |   |   |   |   Fservices <= 0
+|   |   |   |   |   |   |   |   nursery <= 0
+|   |   |   |   |   |   |   |   |   school <= 0: Pass (4.0)
+|   |   |   |   |   |   |   |   |   school > 0: Fail (2.0)
+|   |   |   |   |   |   |   |   nursery > 0: Pass (23.0)
+|   |   |   |   |   |   |   Fservices > 0
+|   |   |   |   |   |   |   |   goout <= 2: Pass (5.0)
+|   |   |   |   |   |   |   |   goout > 2: Fail (6.0)
+|   |   |   |   |   |   absences > 8: Fail (4.0)
+|   |   |   |   |   freetime > 4: Fail (6.0)
+|   |   |   |   Walc > 3: Fail (14.0)
+|   |   |   internet > 0
+|   |   |   |   absences <= 8
+|   |   |   |   |   schoolsup <= 0
+|   |   |   |   |   |   studytime <= 2
+|   |   |   |   |   |   |   school <= 0
+|   |   |   |   |   |   |   |   Medu <= 2
+|   |   |   |   |   |   |   |   |   Pstatus <= 0
+|   |   |   |   |   |   |   |   |   |   freetime <= 2: Pass (9.0)
+|   |   |   |   |   |   |   |   |   |   freetime > 2
+|   |   |   |   |   |   |   |   |   |   |   studytime <= 1: Fail (6.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   studytime > 1
+|   |   |   |   |   |   |   |   |   |   |   |   Medu <= 1: Pass (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   Medu > 1
+|   |   |   |   |   |   |   |   |   |   |   |   |   course <= 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   health <= 2: Pass (2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   health > 2: Fail (9.0/2.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   course > 0: Pass (4.0)
+|   |   |   |   |   |   |   |   |   Pstatus > 0: Fail (2.0)
+|   |   |   |   |   |   |   |   Medu > 2
+|   |   |   |   |   |   |   |   |   Mteach <= 0: Pass (67.0/2.0)
+|   |   |   |   |   |   |   |   |   Mteach > 0
+|   |   |   |   |   |   |   |   |   |   nursery <= 0: Fail (2.0)
+|   |   |   |   |   |   |   |   |   |   nursery > 0
+|   |   |   |   |   |   |   |   |   |   |   famsize <= 0: Pass (20.0)
+|   |   |   |   |   |   |   |   |   |   |   famsize > 0
+|   |   |   |   |   |   |   |   |   |   |   |   famrel <= 4
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fedu <= 2: Pass (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   Fedu > 2: Fail (5.0)
+|   |   |   |   |   |   |   |   |   |   |   |   famrel > 4: Pass (3.0)
+|   |   |   |   |   |   |   school > 0
+|   |   |   |   |   |   |   |   famrel <= 3: Fail (9.0/1.0)
+|   |   |   |   |   |   |   |   famrel > 3
+|   |   |   |   |   |   |   |   |   goout <= 1: Fail (3.0)
+|   |   |   |   |   |   |   |   |   goout > 1
+|   |   |   |   |   |   |   |   |   |   activities <= 0
+|   |   |   |   |   |   |   |   |   |   |   freetime <= 2: Pass (7.0)
+|   |   |   |   |   |   |   |   |   |   |   freetime > 2
+|   |   |   |   |   |   |   |   |   |   |   |   famsup <= 0: Fail (4.0)
+|   |   |   |   |   |   |   |   |   |   |   |   famsup > 0
+|   |   |   |   |   |   |   |   |   |   |   |   |   age <= 16: Fail (3.0/1.0)
+|   |   |   |   |   |   |   |   |   |   |   |   |   age > 16: Pass (3.0)
+|   |   |   |   |   |   |   |   |   |   activities > 0: Pass (13.0)
+|   |   |   |   |   |   studytime > 2: Pass (51.0)
+|   |   |   |   |   schoolsup > 0
+|   |   |   |   |   |   Walc <= 2
+|   |   |   |   |   |   |   activities <= 0: Fail (7.0)
+|   |   |   |   |   |   |   activities > 0
+|   |   |   |   |   |   |   |   health <= 4: Fail (3.0/1.0)
+|   |   |   |   |   |   |   |   health > 4: Pass (6.0)
+|   |   |   |   |   |   Walc > 2: Pass (6.0)
+|   |   |   |   absences > 8
+|   |   |   |   |   Fservices <= 0
+|   |   |   |   |   |   address <= 0
+|   |   |   |   |   |   |   famsize <= 0: Fail (11.0)
+|   |   |   |   |   |   |   famsize > 0
+|   |   |   |   |   |   |   |   Mservices <= 0: Pass (3.0)
+|   |   |   |   |   |   |   |   Mservices > 0: Fail (2.0)
+|   |   |   |   |   |   address > 0: Pass (2.0)
+|   |   |   |   |   Fservices > 0: Pass (10.0/1.0)
+|   |   Mhome > 0
+|   |   |   sex <= 0
+|   |   |   |   romantic <= 0: Fail (13.0)
+|   |   |   |   romantic > 0
+|   |   |   |   |   course <= 0: Pass (2.0)
+|   |   |   |   |   course > 0: Fail (3.0)
+|   |   |   sex > 0
+|   |   |   |   school <= 0
+|   |   |   |   |   Dalc <= 2
+|   |   |   |   |   |   absences <= 9
+|   |   |   |   |   |   |   nursery <= 0
+|   |   |   |   |   |   |   |   age <= 16: Pass (2.0)
+|   |   |   |   |   |   |   |   age > 16: Fail (2.0)
+|   |   |   |   |   |   |   nursery > 0: Pass (20.0)
+|   |   |   |   |   |   absences > 9: Fail (4.0/1.0)
+|   |   |   |   |   Dalc > 2: Fail (2.0)
+|   |   |   |   school > 0
+|   |   |   |   |   age <= 17
+|   |   |   |   |   |   goout <= 2
+|   |   |   |   |   |   |   address <= 0: Fail (2.0)
+|   |   |   |   |   |   |   address > 0: Pass (4.0/1.0)
+|   |   |   |   |   |   goout > 2: Fail (13.0)
+|   |   |   |   |   age > 17: Pass (6.0/1.0)
+failures > 0
+|   age <= 19: Fail (71.0/1.0)
+|   age > 19
+|   |   Fservices <= 0: Pass (2.0)
+|   |   Fservices > 0: Fail (2.0)

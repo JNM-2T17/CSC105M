@@ -1,0 +1,165 @@
+0 - 
+=== Run information ===
+Number of Leaves  : 	45
+
+Size of the tree : 	89
+
+
+Time taken to build model: 0.07 seconds
+
+=== Evaluation on training set ===
+=== Summary ===
+
+Correctly Classified Instances         491               94.605  %
+Incorrectly Classified Instances        28                5.395  %
+Kappa statistic                          0.8904
+Mean absolute error                      0.0956
+Root mean squared error                  0.2187
+Relative absolute error                 19.2999 %
+Root relative squared error             43.9324 %
+Total Number of Instances              519     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.902     0.018      0.977     0.902     0.938      0.965    Fail
+                 0.982     0.098      0.924     0.982     0.952      0.965    Pass
+Weighted Avg.    0.946     0.062      0.948     0.946     0.946      0.965
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 212  23 |   a = Fail
+   5 279 |   b = Pass
+1 - 
+=== Run information ===
+Number of Leaves  : 	54
+
+Size of the tree : 	107
+
+
+Time taken to build model: 0.06 seconds
+
+=== Evaluation on training set ===
+=== Summary ===
+
+Correctly Classified Instances         504               97.1098 %
+Incorrectly Classified Instances        15                2.8902 %
+Kappa statistic                          0.9416
+Mean absolute error                      0.0486
+Root mean squared error                  0.1559
+Relative absolute error                  9.8422 %
+Root relative squared error             31.373  %
+Total Number of Instances              519     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.965     0.022      0.982     0.965     0.974      0.994    Pass
+                 0.978     0.035      0.958     0.978     0.968      0.994    Fail
+Weighted Avg.    0.971     0.027      0.971     0.971     0.971      0.994
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 278  10 |   a = Pass
+   5 226 |   b = Fail
+2 - 
+=== Run information ===
+Number of Leaves  : 	44
+
+Size of the tree : 	87
+
+
+Time taken to build model: 0.08 seconds
+
+=== Evaluation on training set ===
+=== Summary ===
+
+Correctly Classified Instances         487               93.8343 %
+Incorrectly Classified Instances        32                6.1657 %
+Kappa statistic                          0.8757
+Mean absolute error                      0.1097
+Root mean squared error                  0.2342
+Relative absolute error                 22.071  %
+Root relative squared error             46.9803 %
+Total Number of Instances              519     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.917     0.043      0.948     0.917     0.932      0.964    Fail
+                 0.957     0.083      0.93      0.957     0.943      0.964    Pass
+Weighted Avg.    0.938     0.065      0.939     0.938     0.938      0.964
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 220  20 |   a = Fail
+  12 267 |   b = Pass
+3 - 
+=== Run information ===
+Number of Leaves  : 	54
+
+Size of the tree : 	107
+
+
+Time taken to build model: 0.09 seconds
+
+=== Evaluation on training set ===
+=== Summary ===
+
+Correctly Classified Instances         499               96.1464 %
+Incorrectly Classified Instances        20                3.8536 %
+Kappa statistic                          0.9223
+Mean absolute error                      0.0691
+Root mean squared error                  0.1859
+Relative absolute error                 13.8923 %
+Root relative squared error             37.2728 %
+Total Number of Instances              519     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.986     0.066      0.945     0.986     0.965      0.983    Pass
+                 0.934     0.014      0.983     0.934     0.957      0.983    Fail
+Weighted Avg.    0.961     0.042      0.962     0.961     0.961      0.983
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 274   4 |   a = Pass
+  16 225 |   b = Fail
+4 - 
+=== Run information ===
+Number of Leaves  : 	43
+
+Size of the tree : 	85
+
+
+Time taken to build model: 0.07 seconds
+
+=== Evaluation on training set ===
+=== Summary ===
+
+Correctly Classified Instances         481               92.6782 %
+Incorrectly Classified Instances        38                7.3218 %
+Kappa statistic                          0.8499
+Mean absolute error                      0.13  
+Root mean squared error                  0.2549
+Relative absolute error                 26.4316 %
+Root relative squared error             51.4133 %
+Total Number of Instances              519     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.962     0.119      0.913     0.962     0.937      0.949    Pass
+                 0.881     0.038      0.948     0.881     0.913      0.949    Fail
+Weighted Avg.    0.927     0.084      0.928     0.927     0.926      0.949
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+ 282  11 |   a = Pass
+  27 199 |   b = Fail
