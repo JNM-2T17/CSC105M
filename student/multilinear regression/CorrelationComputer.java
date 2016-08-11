@@ -20,6 +20,13 @@ public class CorrelationComputer {
 
 		ArrayList<Row> rows = new ArrayList<Row>();
 		System.out.println("GETTING INPUT");
+		double[] mins = new double[cols.length];
+		double[] maxs = new double[cols.length];
+		for(int i = 0; i < cols.length; i++) {
+			mins[i] = Double.MAX_VALUE;
+			maxs[i] = -Double.MAX_VALUE;
+		}
+
 		while(curr != null && curr.length() > 0 ) {
 			String[] vals = curr.split(",");
 			double[] numVals = new double[vals.length];
@@ -28,9 +35,19 @@ public class CorrelationComputer {
 					vals[i] = vals[i].substring(1,vals[i].length() - 1);
 				}
 				numVals[i] = Double.parseDouble(vals[i]);
+				if( numVals[i] > maxs[i] ) {
+					maxs[i] = numVals[i];
+				} else if( numVals[i] < mins[i]) {
+					mins[i] = numVals[i];
+				}
 			}
 			rows.add(new Row(numVals));
 			curr = br.readLine();
+		}
+		for(Row r : rows) {
+			for(int i = 0; i < cols.length; i++) {
+				r.vals[i] = (r.vals[i] - mins[i]) / (maxs[i] - mins[i]);
+			}
 		}
 		double[] totals = new double[cols.length];
 		double[][] prodTotals = new double[cols.length][cols.length];

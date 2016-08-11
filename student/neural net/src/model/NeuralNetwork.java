@@ -150,10 +150,12 @@ public class NeuralNetwork {
 					error += Math.pow(outputLayer.neuron(j).target() - outputLayer.neuron(j).getValue(),2) / 2;
 				}
 				// System.out.println("Expected " + outputs[i][0] + "->" + (6 / 0.8 * (outputs[i][0] - 0.1) + 1) + " but got " + out[0] + "->" + (6 / 0.8 * (out[0] - 0.1) + 1) + "; Error: " + outputLayer.neuron(0).error());
-				// System.out.println("Fibonacci no #" + (int)(6.0 * inputs[i][0] + 1) + " = " + (12.0 / 0.8 * (outputs[i][0] - 0.1) + 1));
+				// System.out.println("2^" + (int)(6.0 * inputs[i][0] + 1) + " = " + (126.0 / 0.8 * (outputs[i][0] - 0.1) + 1));
 				// System.out.println("Expected " + (outputs[i][0]) + " but got " + (out[0]) + "; Error: " + outputLayer.neuron(0).error());
+				// System.out.println("Expected " + (int)(outputs[i][0] * 20.0) + " but got " + (int)(out[0] * 20.0) + "; Error: " + outputLayer.neuron(0).error());
 				// System.out.print("\nExpected " + (outputs[i][0] > outputs[i][1] ? "0.0" : "1.0") + " but got " + (out[0] > out[1] ? "0.0" : "1.0") + "; Error: " + outputLayer.neuron(0).error());
 				tempError += !(outputs[i][0] > outputs[i][1] ? "0.0" : "1.0").equals(out[0] > out[1] ? "0.0" : "1.0") ? 1 : 0;
+				// tempError += (int)(outputs[i][0] * 20.0) != (int)(out[0] * 20.0) ? 1 : 0;
 				updateNetwork();
 			}
 			// error /= inputs.length * outputLayer.size();

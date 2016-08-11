@@ -48,7 +48,7 @@ public class Driver {
 				rows.get(i).getOutput()
 			};
 		}
-		// nn.train(inputs,outputs,0.04);
+		nn.train(inputs,outputs,0.04,500);
 	}
 }
 

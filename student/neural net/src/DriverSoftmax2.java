@@ -9,13 +9,13 @@ import java.util.ArrayList;
 
 import neuralnet.model.*;
 
-public class DriverSoftmax {
+public class DriverSoftmax2 {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(new File(args[0])));
 		String curr = br.readLine();
 		curr = br.readLine();
 
-		ArrayList<RowSM> rows = new ArrayList<RowSM>();
+		ArrayList<RowSM2> rows = new ArrayList<RowSM2>();
 
 		String[] vals = null;
 		double[] mins = null;
@@ -24,15 +24,15 @@ public class DriverSoftmax {
 		while( curr != null && curr.length() > 0 ) {
 			vals = curr.split(",");
 			if(mins == null && maxs == null) {
-				mins = new double[vals.length];
-				maxs = new double[vals.length];
-				for(int i = 0; i < vals.length; i++) {
+				mins = new double[vals.length - 3];
+				maxs = new double[vals.length - 3];
+				for(int i = 0; i < vals.length - 3; i++) {
 					mins[i] = Double.MAX_VALUE;
 					maxs[i] = -Double.MAX_VALUE;
 				}				
 			}
-			RowSM r = new RowSM();
-			for(int i = 0; i < vals.length - 1; i++) {
+			RowSM2 r = new RowSM2();
+			for(int i = 0; i < vals.length - 3; i++) {
 				if( vals[i].charAt(0) == '"' && vals[i].charAt(vals[i].length() - 1) == '"') {
 					vals[i] = vals[i].substring(1,vals[i].length() - 1);
 				}
@@ -44,20 +44,25 @@ public class DriverSoftmax {
 					mins[i] = val;
 				}
 			}
-			r.setOutput(vals[vals.length - 1].equals("Pass"));
+			r.setOutput(Double.parseDouble(vals[vals.length - 1]));
 			rows.add(r);
 			curr = br.readLine();
 		}	
+		for(int i = 0; i < mins.length; i++) {
+			if(mins[i] == maxs[i]) {
+				maxs[i]++;
+			}
+			// System.out.println(mins[i] + " " + maxs[i]);
+		}
 		br.close();
 
-		NeuralNetwork nn = new NeuralNetwork(vals.length - 1,0.3,0.2);
+		NeuralNetwork nn = new NeuralNetwork(vals.length - 3,0.3,0.2);
 		// NeuralNetwork nn = new NeuralNetwork(3);
 		nn.addHiddenLayer((vals.length + 1) / 2);
 		// nn.addHiddenLayer((vals.length + 1) / 2);
 		// nn.addHiddenLayer(3);
 		// nn.addHiddenLayer(3);
 		// nn.addHiddenLayer(3,0.15,0.25);
-		nn.addOutput(NeuralNetwork.SIGMOID);
 		nn.addOutput(NeuralNetwork.SIGMOID);
 		nn.coalesce();
 		double[][] inputs = new double[rows.size()][];
@@ -68,19 +73,18 @@ public class DriverSoftmax {
 				inputs[i][j] = (inputs[i][j] - mins[j])/(maxs[j] - mins[j]);
 			}
 			outputs[i] = new double[] {
-				rows.get(i).getOutput() ? 0.1 : 0.9,
-				rows.get(i).getOutput() ? 0.9 : 0.1
+				(rows.get(i).getOutput() / 20.0)
 			};
 		}
 		nn.train(inputs,outputs,0.00001,500);
 	}
 }
 
-class RowSM {
+class RowSM2 {
 	private ArrayList<Double> data;
-	private boolean output;
+	private double output;
 
-	public RowSM() {
+	public RowSM2() {
 		data = new ArrayList<Double>();
 		this.output = output;
 	}
@@ -97,11 +101,11 @@ class RowSM {
 		return vals;
 	}
 
-	public boolean getOutput() {
+	public double getOutput() {
 		return output;
 	}
 
-	public void setOutput(boolean output) {
+	public void setOutput(double output) {
 		this.output = output;
 	}
 

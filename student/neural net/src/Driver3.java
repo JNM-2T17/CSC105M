@@ -48,6 +48,6 @@ public class Driver3 {
 				0.1,0.9
 			}
 		};
-		nn.train(inputs,outputs,0.0);
+		nn.train(inputs,outputs,0.0,500000);
 	}
 }
