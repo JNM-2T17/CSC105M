@@ -1,0 +1,7 @@
+stupid <= 1
+|   looksLikeBeef <= 0: Pass
+|   looksLikeBeef > 0: Fail
+stupid > 1
+|   looksLikePork <= 0: Fail
+|   looksLikePork > 0: Pass
+	
