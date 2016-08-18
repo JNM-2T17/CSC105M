@@ -330,6 +330,23 @@ public abstract class Neuron {
 		// System.out.println(weights.get(weights.size() - 1));
 	}
 
+	public String weightString() {
+		String ret = "";
+		for(int i = 0; i < weights.size(); i++) {
+			if( i > 0 ) {
+				ret += " ";
+			}
+			ret += weights.get(i);
+		}
+		return ret;
+	}
+
+	public void setWeights(double[] weight) {
+		for(int i = 0; i < weight.length && i < weights.size(); i++) {
+			weights.set(i,weight[i]);
+		}
+	}
+
 	public String toString() {
 		return "Neuron #" + id;
 	}

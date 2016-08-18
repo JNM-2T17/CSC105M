@@ -3,6 +3,7 @@
 "D:\\DLSU\\Term 9\\CSC105M\\Requirements\\CSC105M\\student\\neural net\\src\\Driver3.java"
 "D:\\DLSU\\Term 9\\CSC105M\\Requirements\\CSC105M\\student\\neural net\\src\\DriverSoftmax.java"
 "D:\\DLSU\\Term 9\\CSC105M\\Requirements\\CSC105M\\student\\neural net\\src\\DriverSoftmax2.java"
+"D:\\DLSU\\Term 9\\CSC105M\\Requirements\\CSC105M\\student\\neural net\\src\\NeuralNetTest.java"
 "D:\\DLSU\\Term 9\\CSC105M\\Requirements\\CSC105M\\student\\neural net\\src\\model\\InputNeuron.java"
 "D:\\DLSU\\Term 9\\CSC105M\\Requirements\\CSC105M\\student\\neural net\\src\\model\\Layer.java"
 "D:\\DLSU\\Term 9\\CSC105M\\Requirements\\CSC105M\\student\\neural net\\src\\model\\LinearNeuron.java"

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 import neuralnet.model.*;
 
-public class DriverSoftmax {
+public class NeuralNetTest {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(new File(args[0])));
 		String curr = br.readLine();
@@ -50,72 +50,58 @@ public class DriverSoftmax {
 		}	
 		br.close();
 
-		NeuralNetwork nn = new NeuralNetwork(vals.length - 1,0.3,0.2);
-		// NeuralNetwork nn = new NeuralNetwork(3);
-		nn.addHiddenLayer((vals.length + 1) / 2);
-		// nn.addHiddenLayer((vals.length + 1) / 2);
-		// nn.addHiddenLayer(3);
-		// nn.addHiddenLayer(3);
-		// nn.addHiddenLayer(3,0.15,0.25);
-		nn.addOutput(NeuralNetwork.SIGMOID);
-		nn.addOutput(NeuralNetwork.SIGMOID);
-		nn.coalesce();
 		double[][] inputs = new double[rows.size()][];
-		double[][] outputs = new double[rows.size()][];
 		for(int i = 0; i < inputs.length; i++) {
 			inputs[i] = rows.get(i).getData();
 			for(int j = 0; j < inputs[i].length; j++) {
 				inputs[i][j] = (inputs[i][j] - mins[j])/(maxs[j] - mins[j]);
 			}
-			outputs[i] = new double[] {
-				rows.get(i).getOutput() ? 0.1 : 0.9,
-				rows.get(i).getOutput() ? 0.9 : 0.1
-			};
 		}
-		nn.train(inputs,outputs,0.00001,500);
-		PrintWriter pw = new PrintWriter(new FileWriter(new File(args[1])));
-		pw.println(nn.toString());
-		pw.close();
-	}
-}
-
-class RowSM {
-	private ArrayList<Double> data;
-	private boolean output;
-
-	public RowSM() {
-		data = new ArrayList<Double>();
-		this.output = output;
-	}
-
-	public void addCol(double dataPoint) {
-		data.add(dataPoint);
-	}
-
-	public double[] getData() {
-		double[] vals = new double[data.size()];
-		for(int i = 0; i < vals.length; i++) {
-			vals[i] = data.get(i).doubleValue();
+		NeuralNetwork[] nn = new NeuralNetwork[5];
+		for(int i = 0; i < 5; i++) {
+			nn[i] = NeuralNetwork.loadNeuralNetwork("nn-" + i + ".txt");
 		}
-		return vals;
-	}
-
-	public boolean getOutput() {
-		return output;
-	}
-
-	public void setOutput(boolean output) {
-		this.output = output;
-	}
-
-	public String toString() {
-		String ret = "";
-		for(int i = 0; i < data.size(); i++) {
-			if( i > 0 ) {
-				ret += ",";
+		
+		int pass = 0;
+		int fail = 0;
+		int tp = 0;
+		int tn = 0;
+		int fp = 0;
+		int fn = 0;
+		for(int i = 0; i < inputs.length; i++) {
+			pass = fail = 0;
+			for(int j = 0; pass < 3 && fail < 3 && j < 5; j++) {
+				nn[j].setInputs(inputs[i]);
+				double[] output = nn[j].computeOutput();
+				if( output[0] > output[1] ) {
+					fail++;
+				} else {
+					pass++;
+				}
 			}
-			ret += data.get(i);
+			boolean prediction = pass == 3;
+			// System.out.println(pass + " " + fail + " " + rows.get(i).getOutput() + " " + prediction);
+			if( rows.get(i).getOutput() ) {
+				if( prediction ) {
+					tp++;
+				} else {
+					fn++;
+				}
+			} else {
+				if( prediction ) {
+					fp++;
+				} else {
+					tn++;
+				}
+			}
 		}
-		return ret;
+
+		System.out.println("Classified as \t Pass\tFail\n" + 
+						"Is Really\nPass\t\t" + tp + "\t" + fn + "\n" + 
+									"Fail\t\t" + fp + "\t" + tn + "\n");
+		System.out.println("Classification Accuracy: " + ((tp + tn) * 1.0 / (tp + tn + fp + fn)) + "\n" + 
+							"Classification Error: " + ((fp + fn) * 1.0 / (tp + tn + fp + fn)) + "\n" + 
+							"Sensitivity: " + ((tp) * 1.0 / (tp + fn)) + "\n" + 
+							"Specificity: " + ((tn) * 1.0 / (tn + fp)));
 	}
 }

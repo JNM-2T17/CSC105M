@@ -37,4 +37,21 @@ public class Layer {
 			n.updateWeights();
 		}
 	}
+
+	public void setWeights(double[][] weights) {
+		for(int i = 0; i < neurons.size() && i < weights.length; i++ ) {
+			neurons.get(i).setWeights(weights[i]);
+		}
+	}
+
+	public String toString() {
+		String ret = neurons.size() + "\n";
+		for(int i = 0; i < neurons.size(); i++) {
+			if( i > 0 ) {
+				ret += "\n";
+			}
+			ret += neurons.get(i).weightString();
+		}
+		return ret;
+	}
 }

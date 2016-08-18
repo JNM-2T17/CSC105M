@@ -1,5 +1,9 @@
 package neuralnet.model;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class NeuralNetwork {
@@ -154,8 +158,8 @@ public class NeuralNetwork {
 				// System.out.println("Expected " + (outputs[i][0]) + " but got " + (out[0]) + "; Error: " + outputLayer.neuron(0).error());
 				// System.out.println("Expected " + (int)(outputs[i][0] * 20.0) + " but got " + (int)(out[0] * 20.0) + "; Error: " + outputLayer.neuron(0).error());
 				// System.out.print("\nExpected " + (outputs[i][0] > outputs[i][1] ? "0.0" : "1.0") + " but got " + (out[0] > out[1] ? "0.0" : "1.0") + "; Error: " + outputLayer.neuron(0).error());
-				// tempError += !(outputs[i][0] > outputs[i][1] ? "0.0" : "1.0").equals(out[0] > out[1] ? "0.0" : "1.0") ? 1 : 0;
-				tempError += (int)(outputs[i][0] * 20.0) != (int)(out[0] * 20.0) ? 1 : 0;
+				tempError += !(outputs[i][0] > outputs[i][1] ? "0.0" : "1.0").equals(out[0] > out[1] ? "0.0" : "1.0") ? 1 : 0;
+				// tempError += (int)(outputs[i][0] * 20.0) != (int)(out[0] * 20.0) ? 1 : 0;
 				updateNetwork();
 			}
 			// error /= inputs.length * outputLayer.size();
@@ -164,5 +168,77 @@ public class NeuralNetwork {
 			System.out.println("; Temp Error: " + tempError);
 			iter++;
 		}
+	}
+
+	public static NeuralNetwork loadNeuralNetwork(String filename) throws IOException {
+		BufferedReader br = new BufferedReader(new FileReader(new File(filename)));
+		//read shit
+		int hidden = Integer.parseInt(br.readLine());
+		String[] parts = br.readLine().split(" ");
+		double learningRate = Double.parseDouble(parts[0]);
+		double momentum = Double.parseDouble(parts[1]);
+		parts = br.readLine().split(" ");
+		int inputLayer = Integer.parseInt(parts[0]);
+		int[] hiddenLayers = new int[hidden];
+		for(int i = 0; i < hidden; i++) {
+			hiddenLayers[i] = Integer.parseInt(parts[i + 1]);
+		}
+		int outputLayer = Integer.parseInt(parts[parts.length - 1]);
+		NeuralNetwork nn = new NeuralNetwork(inputLayer,learningRate,momentum);
+		for(int i = 0; i < hidden; i++) {
+			nn.addHiddenLayer(hiddenLayers[i]);
+		}
+		for(int i = 0; i < outputLayer; i++) {
+			nn.addOutput(SIGMOID);
+		}
+		nn.coalesce();
+		br.readLine();
+		for(int i = 0; i < hidden; i++) {
+			int inputSize = i == 0 ? inputLayer + 1 : hiddenLayers[i - 1] + 1;
+			double[][] weights = new double[hiddenLayers[i]][inputSize];
+			br.readLine();
+			for(int j = 0; j < weights.length; j++) {
+				parts = br.readLine().split(" ");
+				for(int k = 0; k < weights[j].length; k++) {
+					weights[j][k] = Double.parseDouble(parts[k]);
+				}
+			}
+			nn.hiddenLayers.get(i).setWeights(weights);
+			br.readLine();
+		}
+
+		double[][] weights = new double[outputLayer][hiddenLayers[hiddenLayers.length - 1] + 1];
+		br.readLine();
+		for(int j = 0; j < weights.length; j++) {
+			parts = br.readLine().split(" ");
+			for(int k = 0; k < weights[j].length; k++) {
+				weights[j][k] = Double.parseDouble(parts[k]);
+			}
+		}
+		nn.outputLayer.setWeights(weights);
+		br.close();
+		return nn;
+	}
+
+	public String toString() {
+		String ret = hiddenLayers.size() + "\n" + learningRate + " " + 
+						momentum + "\n" + inputLayer.size() + " ";
+		for(int i = 0; i < hiddenLayers.size(); i++) {
+			if( i > 0 ) {
+				ret += " ";
+			}
+			ret += hiddenLayers.get(i).size();
+		}
+		ret += " " + outputLayer.size() + "\n\n";
+
+		for(int i = 0; i < hiddenLayers.size(); i++) {
+			if( i > 0 ) {
+				ret += "\n\n";
+			}
+			ret += hiddenLayers.get(i).toString();
+		}
+
+		ret += "\n\n" + outputLayer.toString();
+		return ret;
 	}
 }
