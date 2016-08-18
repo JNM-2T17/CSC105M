@@ -72,7 +72,7 @@ public class DriverSoftmax {
 				rows.get(i).getOutput() ? 0.9 : 0.1
 			};
 		}
-		nn.train(inputs,outputs,0.00001,500);
+		nn.train(inputs,outputs,0.00001,300);
 		PrintWriter pw = new PrintWriter(new FileWriter(new File(args[1])));
 		pw.println(nn.toString());
 		pw.close();

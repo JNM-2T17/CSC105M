@@ -103,5 +103,22 @@ public class NeuralNetTest {
 							"Classification Error: " + ((fp + fn) * 1.0 / (tp + tn + fp + fn)) + "\n" + 
 							"Sensitivity: " + ((tp) * 1.0 / (tp + fn)) + "\n" + 
 							"Specificity: " + ((tn) * 1.0 / (tn + fp)));
+		pass = fail = 0;
+		double[] shit = new double[] {
+			0,1,20,0,1,1,4,4,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,4,0,1,0,0,1,0,1,0,4,3,3,1,1,2,2
+		};
+		for(int i = 0; i < 39; i++ ) {
+			shit[i] = (shit[i] - mins[i])/(maxs[i] - mins[i]);
+		}
+		for(int j = 0; pass < 3 && fail < 3 && j < 5; j++) {
+			nn[j].setInputs(shit);
+			double[] output = nn[j].computeOutput();
+			if( output[0] > output[1] ) {
+				fail++;
+			} else {
+				pass++;
+			}
+		}
+		System.out.println(pass + " " + fail);
 	}
 }
