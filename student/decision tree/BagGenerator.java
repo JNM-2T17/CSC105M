@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class BagGenerator {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(new File(args[0])));
+		String head = br.readLine();
 		String curr = br.readLine();
-		curr = br.readLine();
 
 		ArrayList<Row> rows = new ArrayList<Row>();
 
@@ -30,12 +30,7 @@ public class BagGenerator {
 		int bags = Integer.parseInt(args[1]);
 		for(int i = 0; i < bags; i++) {
 			PrintWriter pw = new PrintWriter(new FileWriter(new File(transform(args[0],i))));
-			pw.println("school,sex,age,address,famsize,Pstatus,Medu,Fedu,Mteach," + 
-					"Mhealth,Mservices,Mhome,Fteach,Fhealth,Fservices,Fhome," + 
-					"closehome,repu,course,guardF,guardM,traveltime,studytime," + 
-					"failures,schoolsup,famsup,paid,activities,nursery,higher," + 
-					"internet,romantic,famrel,freetime,goout,Dalc,Walc,health," + 
-					"absences,status");
+			pw.println(head);
 			int size = (int)(rows.size() * Double.parseDouble(args[2]));
 			for(int j = 0; j < size; j++) {
 				//random with replacement
