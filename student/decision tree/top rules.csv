@@ -1,0 +1,10 @@
+158,31,failures = 0 ^ higher = yes ^ Mjob != home ^ Walc <= 3 ^ schoolsup = no ^ school = GP ^ internet = yes ^ age <= 18 -> Pass
+139,24,higher = yes ^ failures = 0 ^ school = GP ^ nursery = yes ^ internet = yes ^ schoolsup = no ^ Dalc <= 1 -> Pass
+110,24,failures = 0 ^ higher = yes ^ Mjob != home ^ Dalc <= 2 ^ Fjob != teach ^ absences <= 3 ^ health <= 4 -> Pass
+88,5,failures > 0 ^ age <= 19 -> Fail
+88,3,failures > 0 ^ Medu <= 3 ^ Fedu > 0 -> Fail
+81,9,failures = 0 ^ higher = yes ^ school = GP ^ schoolsup = no ^ internet = yes ^ nursery = yes ^ Fedu <= 3 ^ Dalc <= 1 ^ Fedu > 1 -> Pass
+67,2,failures > 0 ^ Medu <= 2 -> Fail
+64,7,failures = 0 ^ higher = yes ^ Mjob != home ^ internet = yes ^ absences <= 8 ^ schoolsup = no ^ studytime > 2 -> Pass
+63,2,failures > 0 ^ Walc > 1 -> Fail
+61,9,failures = 0 ^ higher = yes ^ Mjob != home ^ internet = yes ^ absences <= 8 ^ schoolsup = no ^ studytime <= 2 ^ school = GP ^ Medu > 2 ^ Mjob != teach -> Pass
